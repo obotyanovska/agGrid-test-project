@@ -25,21 +25,22 @@ import { CustomStatsToolPanel } from './components/table/custom-tool-bar/custom-
     MainComponent,
     SearchBlockComponent,
     TableComponent,
+    CustomStatsToolPanel
   ],
   imports: [
     BrowserModule,
     AgGridModule.withComponents([
       CustomStatsToolPanel,
-      
+
     ]),
     HttpClientModule,
     StoreModule.forRoot({
       videos: videosReducer
     }),
     StoreDevtoolsModule.instrument({
-      maxAge: 25, 
-      logOnly: environment.production, 
-      autoPause: true, 
+      maxAge: 25,
+      logOnly: environment.production,
+      autoPause: true,
     }),
     EffectsModule.forRoot([VideosEffects]),
     BrowserAnimationsModule,

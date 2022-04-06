@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { RowNode, IToolPanelParams, GridOptions } from "ag-grid-community";
-import { CommonService } from './../../../services/common.service';
+import {Component} from '@angular/core';
+import {IToolPanelParams, RowNode} from "ag-grid-community";
+import {CommonService} from '../../../services/common.service';
 
 interface IToolPanelAngularComp {
   agInit(params: IToolPanelParams): void;
@@ -14,10 +14,10 @@ interface IToolPanelAngularComp {
 
 export class CustomStatsToolPanel implements IToolPanelAngularComp  {
   private params: IToolPanelParams;
-  
+
   public totalCount: number;
   public selectedCount: number;
- 
+
   private isCheckboxShown: boolean = true;
 
   public gridApi: any;
@@ -26,10 +26,10 @@ export class CustomStatsToolPanel implements IToolPanelAngularComp  {
   constructor (
     private commonService: CommonService,
   ) {
-    
+
   }
   agInit(params: IToolPanelParams): void {
-    this.params = params; 
+    this.params = params;
 
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
@@ -43,19 +43,18 @@ export class CustomStatsToolPanel implements IToolPanelAngularComp  {
   }
 
   updateTotals(): void {
-  
+
     this.commonService.selectedCount$.subscribe((selectedCount) => this.selectedCount = selectedCount);
     let totalCount = 0;
-    
-    this.params.api.forEachNode((rowNode: RowNode) => {
+
+    this.params.api.forEachNode(() => {
       totalCount +=1;
     });
 
     this.totalCount = totalCount;
   }
 
-  checkboxColumnToggle(event: Event) {
-    console.log(this.gridColumnApi.getColumnState())
+  checkboxColumnToggle() {
     if (this.isCheckboxShown) {
       this.isCheckboxShown = false;
       this.gridColumnApi.applyColumnState({

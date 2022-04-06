@@ -48,9 +48,9 @@ export class TableComponent implements OnInit {
     this.rowData$ = this.store.select(getTableData);
 
     this.columnDefs = [
-      { 
+      {
         headerName: '',
-        field: 'checkboxes', 
+        field: 'checkboxes',
         headerCheckboxSelection: true,
         checkboxSelection: true,
         minWidth: 50,
@@ -58,8 +58,8 @@ export class TableComponent implements OnInit {
         flex: 1,
         cellStyle: {'justify-content': 'center'},
       },
-      { 
-        headerName: '', 
+      {
+        headerName: '',
         field: 'preview',
         cellRenderer(params) {
           return `<img src=${params.value} alt='video preview'>`
@@ -69,16 +69,16 @@ export class TableComponent implements OnInit {
         maxWidth: 200,
         flex: 1,
       },
-      { 
-        headerName: 'Published on', 
-        field: 'publishedOn', 
+      {
+        headerName: 'Published on',
+        field: 'publishedOn',
         minWidth: 100,
         maxWidth: 300,
         flex: 1,
       },
-      { 
-        headerName: 'Video Title', 
-        field: 'videoTitle', 
+      {
+        headerName: 'Video Title',
+        field: 'videoTitle',
         cellRenderer(params) {
           return `<a href= https://www.youtube.com/watch?v=${params.data.id}&list=LL target="_blank">`+ params.value +`</a>`
         },
@@ -86,9 +86,9 @@ export class TableComponent implements OnInit {
         maxWidth: 400,
         flex: 2,
       },
-      { 
-        headerName: 'Description', 
-        field: 'description', 
+      {
+        headerName: 'Description',
+        field: 'description',
         minWidth: 200,
         maxWidth: 1000,
         flex: 2,
@@ -128,7 +128,7 @@ export class TableComponent implements OnInit {
     };
     this.frameworkComponents = { customStatsToolPanel: CustomStatsToolPanel };
     this.rowSelection = 'multiple';
-  } 
+  }
 
   onGridReady(params: any) {
     this.gridApi = params.api;
@@ -136,12 +136,12 @@ export class TableComponent implements OnInit {
   }
 
   getContextMenuItems(params: any): (string | MenuItemDef)[] {
-    
+
     if (params.column.colId !== 'videoTitle') {
       return [];
     }
 
-    const contextMenu = [
+    return [
       'copy',
       {
         name: 'Open in new tab',
@@ -151,11 +151,10 @@ export class TableComponent implements OnInit {
       },
       'paste'
     ];
-    return contextMenu;
   }
 
   onSelectionChanged(event: any) {
-    var rowCount = event.api.getSelectedNodes().length; //quantity selected rows
+    const rowCount = event.api.getSelectedNodes().length; //quantity selected rows
     this.commonService.changeCount(rowCount)
   }
 }

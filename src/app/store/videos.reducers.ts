@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from "@ngrx/store";
 
 import * as videosActions from './videos.actions';
-import { ITableData } from "./../interfaces/interfaces";
+import { ITableData } from "../interfaces/interfaces";
 
 
 export interface IVideosState {
@@ -25,7 +25,7 @@ const reducer = createReducer<IVideosState>(
     const videoData = Object.values(payload);
     videoData.pop();
     return ({
-      ...state, 
+      ...state,
       videosData: [...videoData]
      })
     }

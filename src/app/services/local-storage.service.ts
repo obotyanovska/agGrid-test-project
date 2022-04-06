@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ITableData } from './../interfaces/interfaces';
+import { ITableData } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class LocalStorageService {
 
   public loadFromLocalStorage(dataName:string): ITableData | undefined{
     const data = localStorage.getItem(dataName);
-    return data === null ? undefined : JSON.parse(data); 
+    return data === null ? undefined : JSON.parse(data);
   }
 
   public removeFromLocalStorage(dataName: string):void {

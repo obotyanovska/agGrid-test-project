@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { IRequestVideo, ITableData } from './../interfaces/interfaces';
+import { IRequestVideo, ITableData } from '../interfaces/interfaces';
 import { ActionsEnum } from '../enums/actions.enum';
 
 export const initialVideoRequest = createAction(

@@ -14,19 +14,17 @@ import { LocalStorageEnum } from "../enums/localStorage.enum";
 @Injectable()
 export class VideosEffects {
 
-  private dataFromStorage: IVideosState | undefined;
-
   constructor(
     private actions$: Actions,
     private apiService: ApiService,
     private localStorageService: LocalStorageService,
     private commonService: CommonService,
-    ) { }  
+    ) { }
 
   initialVideo$ = createEffect(() =>
     this.actions$.pipe(
       ofType(videosActions.initialVideoRequest),
-      mergeMap(() => 
+      mergeMap(() =>
         this.apiService.getPopularVideos()
         .pipe(
           map(videos => {
@@ -44,7 +42,7 @@ export class VideosEffects {
   searchVideo$ = createEffect(() =>
     this.actions$.pipe(
       ofType(videosActions.searchVideoRequest),
-      mergeMap((searchValue: IRequestVideo) => 
+      mergeMap((searchValue: IRequestVideo) =>
         this.apiService.getSearchVideos(searchValue)
         .pipe(
           map(videos => {
