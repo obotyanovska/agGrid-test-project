@@ -1,0 +1,21 @@
+<ag-grid-angular
+  #agGrid
+  id="myGrid"
+  style="width: 100%; height: 100%;"
+  class="ag-theme-alpine"
+  [rowData]="rowData$ | async"
+  [columnDefs]="columnDefs"
+  [rowHeight]="rowHeight"
+  [defaultColDef]="defaultColDef"
+  [getContextMenuItems]="getContextMenuItems"
+  [enableRangeSelection]="true"
+  [allowContextMenuWithControlKey]="true"
+  [icons]="icons"
+  [sideBar]="sideBar"
+  [frameworkComponents]="frameworkComponents"
+  [suppressRowClickSelection]="true"
+  [rowSelection]="rowSelection"
+  (selectionChanged)="onSelectionChanged($event)"
+  (gridReady)="onGridReady($event)" 
+>
+</ag-grid-angular>

@@ -1,0 +1,12 @@
+.searchBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+
+  & ::ng-deep .mat-form-field-flex {
+    padding-top: 0;
+    width: 350px;
+  }
+}
+

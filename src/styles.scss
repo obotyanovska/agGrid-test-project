@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ag-icon-custom-stats {
+  background: transparent
+    url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSIjN0Y4QzhEIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMC41IDZWNC41aC01di41MzJhMSAxIDAgMCAwIC4zNi43NjhsMS43MTggMS40MzJhMSAxIDAgMCAxIDAgMS41MzZMNS44NiAxMC4yYTEgMSAwIDAgMC0uMzYuNzY4di41MzJoNVYxMCIvPjxyZWN0IHg9IjEuNSIgeT0iMS41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PC9nPjwvc3ZnPg==)
+    no-repeat center;
+  background-size: 16px 16px;
+  height: 16px;
+  opacity: 0.87;
+  width: 16px;
+  max-width: 16px;
+  display: inline-block;
+}
